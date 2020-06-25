@@ -86,12 +86,11 @@ preferences {
     //tiles {
 	tiles(scale: 2) {
 		multiAttributeTile(name:"multiAVR", type: "mediaPlayer", width: 6, height: 4) {
-          
+         
 		  tileAttribute("device.status", key: "PRIMARY_CONTROL") { 	            
             	attributeState ("paused", label: 'Paused', backgroundColor: "#53a7c0", defaultState: true)
 				attributeState ("playing", label: 'Playing', backgroundColor: "#79b821")
         	}             
-/**
             tileAttribute("device.status", key: "MEDIA_STATUS") { 	            
             	attributeState "playing", label: '${name}', action:"switch.off"
                 attributeState "paused", label: '${name}', action:"switch.on"
@@ -103,7 +102,6 @@ preferences {
             	attributeState("unmuted", action:"mute", nextState: "muted")
             	attributeState("muted", action:"unmute", nextState: "unmuted")
         	}
-**/
         }        
         standardTile("input1", "device.cbl", width: 2, height: 2, decoration: "flat"){     
             state "OFF", label: 'Cable', action: "cbl", icon:"st.Electronics.electronics3", backgroundColor: "#FFFFFF", nextState:"ON"
