@@ -28,6 +28,7 @@ metadata {
         command "toggleMute"
 		command "MP"
 		command "G"
+		command "IRP"
         }
         
         simulator {
@@ -56,12 +57,15 @@ metadata {
         }
         standardTile("MP", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "Media Player", label: 'Shield', action: "MP", backgroundColor: "#ffffff", icon:"st.Electronics.electronics6"
-			}
+		}
         standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics11"
-        	}
+		}
+		standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
+        	state "IRP", label: 'Internet Radio', action: "IRP", icon:"st.Electronics.electronics11"
+		}
         main "switch"
-        details(["switch","input","mute","G", "MP","poll"])
+        details(["switch","input","mute","G", "MP", "IRP","poll"])
     }
 }
 
@@ -183,6 +187,11 @@ def MP() {
 def G() {
 	log.debug "Setting input to XBox One"
     request("cmd0=PutZone_InputFunction%2FGAME")
+}
+
+def IRP() {
+	log.debug "Setting input to Internet Radio"
+	request("cmd0=PutZone_InputFunction%2FIRP")
 }
 
 def poll() { 
