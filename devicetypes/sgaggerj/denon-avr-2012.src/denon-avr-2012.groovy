@@ -12,7 +12,7 @@ preferences {
  
 
 metadata {
-	definition (name: "Denon / Marantz Network Receiver", namespace: "sgaggerj", 
+	definition (name: "Denon AVR 2012", namespace: "sgaggerj", 
     	author: "sgaggerj") {
         capability "Actuator"
         capability "Switch" 
