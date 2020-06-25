@@ -38,8 +38,8 @@ metadata {
         	tiles(scale: 2) {
 		multiAttributeTile(name:"switch", type: "generic", width: 6, height: 4) {
            tileAttribute("device.switch", key: "PRIMARY_CONTROL") { 	            
-                attributeState "on", label: '${name}', action:"switch.off", backgroundColor: "#79b821", icon:"st.Electronics.electronics16"
-            	attributeState "off", label: '${name}', action:"switch.on", backgroundColor: "#ffffff", icon:"st.Electronics.electronics16"
+                attributeState "on", label: '${name}', action:"switch.off", backgroundColor: "#79b821", icon:"st.Electronics.electronics19"
+            	attributeState "off", label: '${name}', action:"switch.on", backgroundColor: "#ffffff", icon:"st.Electronics.electronics19"
         	}             
             tileAttribute ("level", key: "SLIDER_CONTROL") {
            		attributeState "default", label:'Volume Level: ${name}', action:"setLevel"
