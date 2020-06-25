@@ -115,6 +115,18 @@ preferences {
    input("device11", "string", title: "Device Network ID 11", description: "The Device Network Id", defaultValue: "", type: "capability.switch", required: false, displayDuringSetup: false)
    input("end11", "string", title: "Device Endpoint ID 11", description: "endpointId from Data Section of device", defaultValue: "", required: false, displayDuringSetup: false)
   }
+   section("Device12") {
+   input("device12", "string", title: "Device Network ID 12", description: "The Device Network Id", defaultValue: "", type: "capability.switch", required: false, displayDuringSetup: false)
+   input("end12", "string", title: "Device Endpoint ID 12", description: "endpointId from Data Section of device", defaultValue: "", required: false, displayDuringSetup: false)
+  }
+    section("Device13") {
+   input("device13", "string", title: "Device Network ID 13", description: "The Device Network Id", defaultValue: "", type: "capability.switch", required: false, displayDuringSetup: false)
+   input("end13", "string", title: "Device Endpoint ID 13", description: "endpointId from Data Section of device", defaultValue: "", required: false, displayDuringSetup: false)
+  }
+    section("Device14") {
+   input("device14", "string", title: "Device Network ID 14", description: "The Device Network Id", defaultValue: "", type: "capability.switch", required: false, displayDuringSetup: false)
+   input("end14", "string", title: "Device Endpoint ID 14", description: "endpointId from Data Section of device", defaultValue: "", required: false, displayDuringSetup: false)
+  }
  }
 
 
@@ -175,11 +187,11 @@ public String getInfo(){
  *returns: Arraylist<[address,endpoint]>
  */
 final ArrayList < String[] > getDevices() {
- String[] devs = [settings.device1, settings.device2, settings.device3, settings.device4, settings.device5, settings.device6, settings.device7, settings.device8, settings.device9, settings.device10, settings.device11]
- if (devs == [null, null, null, null, null, null, null, null, null, null, null]) log.info("------No devices configured in $device preferences--------")
- String[] ends = [end1, end2, end3, end4, end5, end6, end7, end8, end9, end10, end11]
+ String[] devs = [settings.device1, settings.device2, settings.device3, settings.device4, settings.device5, settings.device6, settings.device7, settings.device8, settings.device9, settings.device10, settings.device11, settings.device12, settings.device13, settings.device14]
+ if (devs == [null, null, null, null, null, null, null, null, null, null, null, null, null, null]) log.info("------No devices configured in $device preferences--------")
+ String[] ends = [end1, end2, end3, end4, end5, end6, end7, end8, end9, end10, end11, end12, end13, end14]
  ArrayList < String[] > list = new ArrayList < > ([])
- for (int i = 0; i < 11; i++) {
+ for (int i = 0; i < 14; i++) {
   if (devs[i] != null) {
    list.add([devs[i], ends[i]])
   }
