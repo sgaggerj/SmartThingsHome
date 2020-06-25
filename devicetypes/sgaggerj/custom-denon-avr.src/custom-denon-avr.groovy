@@ -28,7 +28,7 @@ metadata {
         command "toggleMute"
 		command "MP"
 		command "G"
-		command "IRP"
+		command "NETHOME"
         }
         
         simulator {
@@ -61,11 +61,11 @@ metadata {
         standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics11"
 		}
-		standardTile("IRP", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "IRP", label: 'Internet Radio', action: "IRP", icon:"st.Electronics.electronics11"
+		standardTile("NETHOME", "device.switch", width: 2, height: 2, decoration: "flat"){
+        	state "NETHOME", label: 'Internet Radio', action: "NETHOME", icon:"st.Electronics.electronics10"
 		}
         main "switch"
-        details(["switch","input","mute","G", "MP", "IRP","poll"])
+        details(["switch","input","mute","G", "MP", "NETHOME","poll"])
     }
 }
 
@@ -189,9 +189,9 @@ def G() {
     request("cmd0=PutZone_InputFunction%2FGAME")
 }
 
-def IRP() {
+def NETHOME() {
 	log.debug "Setting input to Internet Radio"
-	request("cmd0=PutZone_InputFunction%2FIRP")
+	request("cmd0=PutZone_InputFunction%2FNETHOME")
 }
 
 def poll() { 
