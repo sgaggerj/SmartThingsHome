@@ -61,7 +61,7 @@ metadata {
         standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics11"
 		}
-		standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
+		standardTile("IRP", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "IRP", label: 'Internet Radio', action: "IRP", icon:"st.Electronics.electronics11"
 		}
         main "switch"
