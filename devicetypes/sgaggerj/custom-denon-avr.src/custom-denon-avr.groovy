@@ -11,8 +11,7 @@ preferences {
 }
 
 metadata {
-    definition (name: "Custom Denon AVR", namespace: "sgaggerj", 
-        author: "sgaggerj") {
+    definition (name: "Custom Denon AVR", namespace: "sgaggerj", author: "sgaggerj") {
         capability "Actuator"
         capability "Switch" 
         capability "Polling"
@@ -29,20 +28,20 @@ metadata {
 		command "MP"
 		command "G"
 		command "NETHOME"
-        }
+	}
         
-        simulator {
+	simulator {
 		// TODO-: define status and reply messages here
 	}
     
-        	tiles(scale: 2) {
+	tiles(scale: 2) {
 		multiAttributeTile(name:"switch", type: "generic", width: 6, height: 4) {
-           tileAttribute("device.switch", key: "PRIMARY_CONTROL") { 	            
-                attributeState "on", label: '${name}', action:"switch.off", backgroundColor: "#79b821", icon:"st.Electronics.electronics19"
+			tileAttribute("device.switch", key: "PRIMARY_CONTROL") { 	            
+				attributeState "on", label: '${name}', action:"switch.off", backgroundColor: "#79b821", icon:"st.Electronics.electronics19"
             	attributeState "off", label: '${name}', action:"switch.on", backgroundColor: "#ffffff", icon:"st.Electronics.electronics19"
-        	}             
-            tileAttribute ("level", key: "SLIDER_CONTROL") {
-           		attributeState "default", label:'Volume Level: ${name}', action:"setLevel"
+			}             
+			tileAttribute ("level", key: "SLIDER_CONTROL") {
+				attributeState "default", label:'Volume Level: ${name}', action:"setLevel"
             }
             tileAttribute("device.input", key: "SECONDARY_CONTROL") {
             	attributeState ("default", label:'Current Input: ${currentValue}')
@@ -55,17 +54,17 @@ metadata {
             state "muted", action:"unmute", backgroundColor: "#ffffff", icon:"st.custom.sonos.muted", nextState:"unmuted"
             state "unmuted", action:"mute", backgroundColor: "#ffffff", icon:"st.custom.sonos.unmuted", nextState:"muted"
         }
-        standardTile("MP", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "Media Player", label: 'Shield', action: "MP", backgroundColor: "#ffffff", icon:"st.Electronics.electronics8"
+        standardTile("MPLAY", "device.switch", width: 2, height: 2, decoration: "flat"){
+        	state "Media Player", label: 'Media Player', action: "MPLAY", backgroundColor: "#ffffff", icon:"st.Electronics.electronics8"
 		}
-        standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics5"
+        standardTile("GAME", "device.switch", width: 2, height: 2, decoration: "flat"){
+        	state "Game", label: 'Game', action: "GAME", icon:"st.Electronics.electronics5"
 		}
 		standardTile("NETHOME", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "NETHOME", label: 'Internet Radio', action: "NETHOME", icon:"st.Electronics.electronics10"
 		}
         main "switch"
-        details(["switch","input","mute","G", "MP", "NETHOME","poll"])
+        details(["switch","input","mute","GAME", "MPLAY", "NETHOME","poll"])
     }
 }
 
@@ -179,12 +178,12 @@ def toggleMute(){
     if(device.currentValue("mute") == "muted") { unmute() }
 	else { mute() }
 }
-def MP() {
+def MPLAY() {
 	log.debug "Setting input to Shield"
     request("cmd0=PutZone_InputFunction%2FMPLAY")
 }
 
-def G() {
+def GAME() {
 	log.debug "Setting input to XBox One"
     request("cmd0=PutZone_InputFunction%2FGAME")
 }
