@@ -3,6 +3,7 @@
  *     Works on Network Receivers newer than 2012
  *    SmartThings driver to connect your Denon Network Receiver to SmartThings
  *
+ * https://github.com/KristopherKubicki/device-denon-avr/blob/master/device-denon-avr.groovy
  */
 
 preferences {
@@ -13,7 +14,7 @@ preferences {
 
 metadata {
 	definition (name: "Denon AVR 2012", namespace: "sgaggerj", 
-    	author: "sgaggerj") {
+    	author: "Kristopher Kubicki") {
         capability "Actuator"
         capability "Switch" 
         capability "Polling"

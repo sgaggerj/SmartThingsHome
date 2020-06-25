@@ -19,11 +19,14 @@ TESED DENON MODELS
 	EnModelSR70,		//(11)
 	EnModelAV77,		//(12)
 	EnModelAV88,		//(13)
+	
+	https://github.com/sbdobrescu/DenonAVR_OLD/blob/master/devicetypes/sb/denon-avr.src/denon-avr-old.groovy
+	
 */
 
 metadata {
     definition (name: "Denon AVR Old", namespace: "sgaggerj", 
-        author: "sgaggerj") {
+        author: "Bobby Dobrescu") {
         capability "Actuator"
         capability "Switch" 
         capability "Polling"

@@ -1,5 +1,8 @@
+/**
+https://github.com/billsq/smartthings-denon-avr-2017/blob/master/devicetypes/billsq/denon-av-receiver.src/denon-av-receiver.groovy
+*/
 metadata {
-    definition (name: "Denon AVR 2017", namespace: "sgaggerj", author: "sgaggerj") {
+    definition (name: "Denon AVR 2017", namespace: "sgaggerj", author: "Qian Sheng") {
         capability "Actuator"
         capability "Switch"
         capability "Polling"
