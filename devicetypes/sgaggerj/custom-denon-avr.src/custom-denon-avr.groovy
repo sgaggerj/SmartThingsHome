@@ -56,10 +56,10 @@ metadata {
             state "unmuted", action:"mute", backgroundColor: "#ffffff", icon:"st.custom.sonos.unmuted", nextState:"muted"
         }
         standardTile("MP", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "Media Player", label: 'Shield', action: "MP", backgroundColor: "#ffffff", icon:"st.Electronics.electronics6"
+        	state "Media Player", label: 'Shield', action: "MP", backgroundColor: "#ffffff", icon:"st.Electronics.electronics8"
 		}
         standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics11"
+        	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics5"
 		}
 		standardTile("NETHOME", "device.switch", width: 2, height: 2, decoration: "flat"){
         	state "NETHOME", label: 'Internet Radio', action: "NETHOME", icon:"st.Electronics.electronics10"
