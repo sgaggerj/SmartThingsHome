@@ -55,10 +55,10 @@ metadata {
             state "unmuted", action:"mute", backgroundColor: "#ffffff", icon:"st.custom.sonos.unmuted", nextState:"muted"
         }
         standardTile("MP", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "Media Player", label: 'Media Player', action: "MP", backgroundColor: "#ffffff", icon:"st.Electronics.electronics6"
+        	state "Media Player", label: 'Shield', action: "MP", backgroundColor: "#ffffff", icon:"st.Electronics.electronics6"
 			}
         standardTile("G", "device.switch", width: 2, height: 2, decoration: "flat"){
-        	state "G", label: 'Game', action: "G", icon:"st.Electronics.electronics11"
+        	state "G", label: 'XBox  One', action: "G", icon:"st.Electronics.electronics11"
         	}
         main "switch"
         details(["switch","input","mute","G", "MP","poll"])
@@ -176,12 +176,12 @@ def toggleMute(){
 	else { mute() }
 }
 def MP() {
-	log.debug "Setting input to Media Player"
+	log.debug "Setting input to Shield"
     request("cmd0=PutZone_InputFunction%2FMPLAY")
 }
 
 def G() {
-	log.debug "Setting input to Game 1"
+	log.debug "Setting input to XBox One"
     request("cmd0=PutZone_InputFunction%2FGAME")
 }
 
