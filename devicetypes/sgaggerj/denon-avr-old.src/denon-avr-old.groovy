@@ -47,10 +47,7 @@ metadata {
 		attribute "q1", "string"
 		attribute "q2", "string"
 		attribute "q3", "string"        
-		attribute "q4", "string"          
-		attribute "zone2", "string" 
-
-
+		attribute "q4", "string"
 
         command "mute"
         command "unmute"
@@ -71,10 +68,7 @@ metadata {
 		command "q2"
 		command "q3"
 		command "q4"
-		command "sPure" 
-		command "z2on"        
-		command "z2off"        
-
+		command "sPure"         
         }
 
 
@@ -157,11 +151,7 @@ preferences {
         standardTile("input14", "device.q4", width: 1, height: 1, decoration: "flat"){
         	state "OFF", label: 'Quick 4', action: "q4", backgroundColor: "#53a7c0",nextState:"ON"   
             state "ON", label: 'Quick 4', action: "q4", backgroundColor: "#79b821", nextState:"OFF"   
-			}
-	standardTile("zone2", "device.zone2", width: 1, height: 1, inactiveLabel: false, decoration: "flat") {
-			state "OFF", label:"Zone 2", action:"z2on", backgroundColor:"#53a7c0", nextState:"on"
-			state "ON", label:"Zone 2", action:"z2off", backgroundColor:"#79b821", nextState:"off"
-        	}            
+			}            
 		standardTile("poll", "device.poll", width: 1, height: 1, decoration: "flat") {
             state "poll", label: "", action: "polling.poll", icon: "st.secondary.refresh", backgroundColor: "#FFFFFF"
         }
