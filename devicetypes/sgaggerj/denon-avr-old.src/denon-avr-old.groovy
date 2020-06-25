@@ -41,8 +41,7 @@ metadata {
         command "mute"
         command "unmute"
         command "toggleMute"
-        command "inputSelect", ["string"]
-        command "inputNext"
+        
 		command "mp"
 		command "game"
         }
@@ -79,11 +78,11 @@ preferences {
             	attributeState("muted", action:"unmute", nextState: "unmuted")
         	}
         }        
-		standardTile("input5", "device.mp", width: 2, height: 2, decoration: "flat"){
-        	state "OFF", label: 'Amazon TV', action: "mp", icon:"st.Electronics.electronics9", backgroundColor: "#FFFFFF",nextState:"ON"   
-            state "ON", label: 'Amazon TV', action: "mp", icon:"st.Electronics.electronics9", backgroundColor: "#53a7c0", nextState:"OFF"              
+		standardTile("input1", "device.mp", width: 2, height: 2, decoration: "flat"){
+        	state "OFF", label: 'Media Player', action: "mp", icon:"st.Electronics.electronics9", backgroundColor: "#FFFFFF",nextState:"ON"   
+            state "ON", label: 'Media Player', action: "mp", icon:"st.Electronics.electronics9", backgroundColor: "#53a7c0", nextState:"OFF"              
 			}
-        standardTile("input7", "device.game", width: 2, height: 2, decoration: "flat"){
+        standardTile("input2", "device.game", width: 2, height: 2, decoration: "flat"){
         	state "OFF", label: 'Game', action: "game", icon:"st.Electronics.electronics5", backgroundColor: "#FFFFFF",nextState:"ON"   
             state "ON", label: 'Game', action: "game", icon:"st.Electronics.electronics5", backgroundColor: "#53a7c0", nextState:"OFF"   
 			}                        
@@ -91,7 +90,7 @@ preferences {
             state "poll", label: "", action: "polling.poll", icon: "st.secondary.refresh", backgroundColor: "#FFFFFF"
         }
 main "multiAVR"
-        details(["multiAVR", "input4", "input6", "poll"])
+        details(["multiAVR", "input1", "input2", "poll"])
     }
 }
 def parse(String description) {
