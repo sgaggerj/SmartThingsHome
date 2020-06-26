@@ -178,7 +178,7 @@ def inputNext() {
     def selectedInputs = device.currentValue("inputChan").substring(1,device.currentValue("inputChan").length()-1).split(', ').collect{it}
     selectedInputs.push(selectedInputs[0])
     log.debug "SELECTED: $selectedInputs"
-    
+    log.debug device
     def semaphore = 0
     for(selectedInput in selectedInputs) {
     	if(semaphore == 1) { 
